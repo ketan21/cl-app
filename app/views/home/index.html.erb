@@ -1,2 +1,9 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<span><p class="lead"><strong>Select User to see its metrics</strong></p>
+<form action="<%= get_user_path %>" method = "POST" class="form-horizontal">
+    <select name="user_id" id="user_id">
+        <% @ids.each do |id| %>
+        <option value="<%= id %>"><%= id %></option>
+        <% end -%>
+    </select>
+    <button class="btn">Submit</button>
+</form></span><hr>
