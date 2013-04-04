@@ -6,7 +6,8 @@ var data = [
 	},
 	{
 		value : <%= @total_tasks - @user_tasks%>,
-		color : "#E0E4CC"
+		color : "#CCCCCC"
 	}
 ]
 new Chart(ctx).Pie(data);
+$('div#caption').show();

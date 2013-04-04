@@ -1,4 +1,4 @@
-<span><p class="lead"><strong>Select User to see its metrics</strong></p>
+<p class="lead"><strong>Select User to see its metrics</strong></p>
 <form action="<%= get_user_path %>" method = "POST" class="form-horizontal"  data-remote="true">
     <select name="user_id" id="user_id">
         <% @ids.each do |id| %>
@@ -6,7 +6,8 @@
         <% end -%>
     </select>
     <button class="btn">Submit</button>
-</form></span><hr>
+</form>
+<hr>
 
-<div id="chart"></div>
-<canvas id="myChart" width="400" height="400"></canvas>
+<canvas id="myChart" width="300" height="300"></canvas>
+<div id="caption" hidden><strong>Pie Chart showing Tasks completed by user</strong></div>
