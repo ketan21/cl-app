@@ -6,13 +6,16 @@ class HomeController < ApplicationController
 
   def get_user
   	id = params[:user_id]
-
-  	# TODO 
-  	
-
-
+    user = User.where(id: id)
+  	@total_tasks = Task.all.count         # 13
+  	@user_tasks  = user.first.task_users.count  # 10 for user 1 
 
 
-  	redirect_to root_path, :flash => { :success => "done"}
+    respond_to do |format|
+      format.js { render 'display_chart' }
+    end
+
+
+  	# redirect_to root_path, :flash => { :notice => "done"}
   end
 end

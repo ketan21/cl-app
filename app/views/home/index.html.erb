@@ -1,5 +1,5 @@
 <span><p class="lead"><strong>Select User to see its metrics</strong></p>
-<form action="<%= get_user_path %>" method = "POST" class="form-horizontal">
+<form action="<%= get_user_path %>" method = "POST" class="form-horizontal"  data-remote="true">
     <select name="user_id" id="user_id">
         <% @ids.each do |id| %>
         <option value="<%= id %>"><%= id %></option>
@@ -7,3 +7,6 @@
     </select>
     <button class="btn">Submit</button>
 </form></span><hr>
+
+<div id="chart"></div>
+<canvas id="myChart" width="400" height="400"></canvas>

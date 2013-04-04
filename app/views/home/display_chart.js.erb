@@ -1,0 +1,12 @@
+var ctx = $("#myChart").get(0).getContext("2d");
+var data = [
+	{
+		value: <%= @user_tasks %>,
+		color:"#F38630"
+	},
+	{
+		value : <%= @total_tasks - @user_tasks%>,
+		color : "#E0E4CC"
+	}
+]
+new Chart(ctx).Pie(data);
